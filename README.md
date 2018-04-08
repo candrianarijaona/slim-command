@@ -14,9 +14,7 @@ Requires Slim 3.0.0 or newer.
 ## Usage
 
 First, you need to create a PHP script to define the console application.
-
 In this case, let's put it in under the directory /bin.
-
 Make you sure that your console has an access to your slim app.
 
 ```php
@@ -35,7 +33,7 @@ $container = $app->getContainer();
 $application->run();
 ```
 
-You can register the route command using add().
+You can register additionnal command using add().
 
 ## Available commands
 
