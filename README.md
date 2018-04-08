@@ -38,7 +38,7 @@ You can register additionnal command using add().
 ## Available commands
 
 * [Container](#container)
-* [Route](#route)
+* [Router](#router)
 
 ### Container
 
