@@ -35,7 +35,7 @@ class DebugCommand extends Command
     protected function configure()
     {
         $this
-            ->setName('app:route')
+            ->setName('app:debug-route')
             ->setDescription('Display route information')
             ->setHelp('This command allow you to display routes on your application')
         ;
