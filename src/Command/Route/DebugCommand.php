@@ -15,6 +15,8 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class DebugCommand extends Command
 {
+    const NAME = 'debug:router';
+
     /** @var Router */
     protected $router;
 
@@ -35,7 +37,7 @@ class DebugCommand extends Command
     protected function configure()
     {
         $this
-            ->setName('app:debug-route')
+            ->setName(self::NAME)
             ->setDescription('Display route information')
             ->setHelp('This command allow you to display routes on your application')
         ;
