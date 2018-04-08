@@ -16,6 +16,8 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class DebugCommand extends Command
 {
+    const NAME = 'debug:container';
+
     /** @var Container */
     protected $container;
 
@@ -36,7 +38,7 @@ class DebugCommand extends Command
     protected function configure()
     {
         $this
-            ->setName('app:debug-container')
+            ->setName(self::NAME)
             ->setDescription('Display container services')
             ->setHelp('This command allow you to display the registered services in your application');
     }
@@ -60,13 +62,10 @@ class DebugCommand extends Command
      */
     protected function getFormatedOutput()
     {
-        $tableOutput = [];
-
         $keys = $this->container->keys();
-        $raws = $this->container->raw('errorHandler');
-        var_dump($raws);
         sort($keys);
 
+        $tableOutput = [];
         foreach ($keys as $key) {
             $callable = $this->container->get($key);
             if (!is_object($callable)) {
@@ -90,10 +89,6 @@ class DebugCommand extends Command
      */
     protected function getCallableClassName($callable)
     {
-        if (is_callable($callable)) {
-            return get_class($callable);
-        }
-
         try {
             $class = new ReflectionClass($callable);
         } catch (Exception $exception) {
