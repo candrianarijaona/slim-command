@@ -11,10 +11,14 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
- * Class DebugCommand
- * @package Candrianarijaona\Command
+ * Class DebugContainerCommand
+ *
+ * @package     SlimCommand
+ * @author      Claude Andrianarijaona
+ * @licence    MIT
+ * @copyright   (c) 2018, Claude Andrianarijaona
  */
-class DebugCommand extends Command
+class DebugContainerCommand extends Command
 {
     const NAME = 'debug:container';
 
@@ -22,8 +26,8 @@ class DebugCommand extends Command
     protected $container;
 
     /**
-     * RouteCommand constructor.
-     * @param Container $container The PSR container
+     * DebugContainerCommand constructor.
+     * @param Container $container The slim container
      */
     public function __construct(Container $container)
     {
@@ -50,13 +54,15 @@ class DebugCommand extends Command
     {
         $table = new Table($output);
         $table
-            ->setHeaders(array('ID', 'Name'))
+            ->setHeaders(array('Service ID', 'Classe Name'))
             ->setRows($this->getFormatedOutput());
 
         $table->render();
     }
 
     /**
+     * Format the list of the services of the container
+     *
      * @return array
      * @throws \Interop\Container\Exception\ContainerException
      */

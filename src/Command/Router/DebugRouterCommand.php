@@ -1,6 +1,6 @@
 <?php
 
-namespace Candrianarijaona\Command\Route;
+namespace Candrianarijaona\Command\Router;
 
 use Slim\Route;
 use Slim\Router;
@@ -10,10 +10,14 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
- * Class DebugCommand
- * @package Candrianarijaona\Command
+ * Class DebugRouterCommand
+ *
+ * @package     Candrianarijaona\Command
+ * @author      Claude Andrianarijaona
+ * @licence    MIT
+ * @copyright   (c) 2018, Claude Andrianarijaona
  */
-class DebugCommand extends Command
+class DebugRouterCommand extends Command
 {
     const NAME = 'debug:router';
 
@@ -21,7 +25,7 @@ class DebugCommand extends Command
     protected $router;
 
     /**
-     * RouteCommand constructor.
+     * DebugRouterCommand constructor.
      * @param Router $router    The slim router
      */
     public function __construct(Router $router)

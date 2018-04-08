@@ -38,18 +38,34 @@ You can register additionnal command using add().
 ## Available commands
 
 * [Route](#route)
+* [Container](#container)
 
-### Route
+### Router
 
 ```php
 <?php
-use Candrianarijaona\Command\Route\DebugCommand;
+use Candrianarijaona\Command\Router\DebugRouterCommand;
 
-$application->add(new DebugCommand($container->router));
+$application->add(new DebugRouterCommand($container->router));
 ```
 
 Executing the commmand:
 
 ```bash
-php bin/console app:debug-route
+php bin/console debug:router
+```
+
+### Container
+
+```php
+<?php
+use Candrianarijaona\Command\Container\DebugContainerCommand;
+
+$application->add(new DebugContainerCommand($container->router));
+```
+
+Executing the commmand:
+
+```bash
+php bin/console debug:container
 ```
