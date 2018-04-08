@@ -1,6 +1,6 @@
 <?php
 
-namespace Candrianarijaona\Command\Route;
+namespace Candrianarijaona\Command\Router;
 
 use Slim\Route;
 use Slim\Router;
@@ -10,16 +10,22 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
- * Class RouteCommand
- * @package Candrianarijaona\Command
+ * Class DebugRouterCommand
+ *
+ * @package     Candrianarijaona\Command
+ * @author      Claude Andrianarijaona
+ * @licence    MIT
+ * @copyright   (c) 2018, Claude Andrianarijaona
  */
-class DebugCommand extends Command
+class DebugRouterCommand extends Command
 {
+    const NAME = 'debug:router';
+
     /** @var Router */
     protected $router;
 
     /**
-     * RouteCommand constructor.
+     * DebugRouterCommand constructor.
      * @param Router $router    The slim router
      */
     public function __construct(Router $router)
@@ -35,7 +41,7 @@ class DebugCommand extends Command
     protected function configure()
     {
         $this
-            ->setName('app:debug-route')
+            ->setName(self::NAME)
             ->setDescription('Display route information')
             ->setHelp('This command allow you to display routes on your application')
         ;
