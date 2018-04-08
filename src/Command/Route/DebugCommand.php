@@ -1,6 +1,6 @@
 <?php
 
-namespace Candrianarijaona\Command;
+namespace Candrianarijaona\Command\Route;
 
 use Slim\Route;
 use Slim\Router;
@@ -13,14 +13,14 @@ use Symfony\Component\Console\Output\OutputInterface;
  * Class RouteCommand
  * @package Candrianarijaona\Command
  */
-class RouteCommand extends Command
+class DebugCommand extends Command
 {
     /** @var Router */
     protected $router;
 
     /**
      * RouteCommand constructor.
-     * @param Router $router
+     * @param Router $router    The slim router
      */
     public function __construct(Router $router)
     {
@@ -43,10 +43,6 @@ class RouteCommand extends Command
 
     /**
      *@inheritdoc
-     *
-     * @param InputInterface $input
-     * @param OutputInterface $output
-     * @return void
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
@@ -73,11 +69,26 @@ class RouteCommand extends Command
                 $route->getIdentifier(),
                 $route->getName(),
                 $route->getPattern(),
-                $route->getCallable(),
+                $this->getPrintableCallable($route->getCallable()),
                 implode(',', $route->getMethods())
             ];
         }
 
         return $tableOutput;
+    }
+
+    /**
+     * Get the description of the callable
+     *
+     * @param string|callable $callable     The route callable
+     * @return string
+     */
+    protected function getPrintableCallable($callable)
+    {
+        if (is_callable($callable)) {
+            return "Anonymous function";
+        }
+
+        return $callable;
     }
 }
