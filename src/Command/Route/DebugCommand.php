@@ -10,7 +10,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
- * Class RouteCommand
+ * Class DebugCommand
  * @package Candrianarijaona\Command
  */
 class DebugCommand extends Command
