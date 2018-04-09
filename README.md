@@ -49,7 +49,7 @@ Display the registered services for an application.
 
 use Candrianarijaona\Command\Container\DebugContainerCommand;
 
-$application->add(new DebugContainerCommand($container->router));
+$application->add(new DebugContainerCommand($container));
 ```
 
 Executing the commmand:
