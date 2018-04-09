@@ -15,7 +15,7 @@ use Symfony\Component\Console\Output\OutputInterface;
  *
  * @package     SlimCommand
  * @author      Claude Andrianarijaona
- * @licence    MIT
+ * @licence     MIT
  * @copyright   (c) 2018, Claude Andrianarijaona
  */
 class DebugContainerCommand extends Command

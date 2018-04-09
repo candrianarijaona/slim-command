@@ -1,0 +1,28 @@
+<?php
+
+namespace %namespace%;
+
+use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\ServerRequestInterface;
+use Slim\Http\Request;
+use Slim\Http\Response;
+
+
+/**
+ * Class
+ */
+class %controller%
+{
+    /**
+     * @param ServerRequestInterface|Request $request   The PSR-7 request object
+     * @param ResponseInterface|Response $response      The PSR-7 response object
+     * @param array $args                               Array of arguments
+     *
+     * @return ResponseInterface
+     */
+    public function %action%(ServerRequestInterface $request, ResponseInterface $response, array $args = [])
+    {
+        //TODO : implement this controller
+        return $response;
+    }
+}
