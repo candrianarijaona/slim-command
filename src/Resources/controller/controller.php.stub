@@ -9,7 +9,8 @@ use Slim\Http\Response;
 
 
 /**
- * Class
+ * Class %controller%
+ * @package %package%
  */
 class %controller%
 {
