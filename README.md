@@ -53,7 +53,7 @@ use Candrianarijaona\Command\Container\DebugContainerCommand;
 $application->add(new DebugContainerCommand($container));
 ```
 
-Executing the commmand:
+Executing the command:
 
 ```bash
 php bin/console debug:container
@@ -75,7 +75,7 @@ $application->add(
 );
 ```
 
-Executing the commmand:
+Executing the command:
 
 ```bash
 php bin/console generate:controller
@@ -94,7 +94,7 @@ use Candrianarijaona\Command\Router\DebugRouterCommand;
 $application->add(new DebugRouterCommand($container->router));
 ```
 
-Executing the commmand:
+Executing the command:
 
 ```bash
 php bin/console debug:router
