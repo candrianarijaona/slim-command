@@ -21,7 +21,7 @@ Make you sure that your console has an access to your slim app.
 #!/usr/bin/env php
 <?php
 
-require __DIR__.'/../index.php'; //Path to your public index.php
+require __DIR__.'/../bootstrap.php'; //The bootstrap file where you init your slim app
 
 use Symfony\Component\Console\Application;
 
@@ -38,6 +38,7 @@ You can register additionnal command using add().
 ## Available commands
 
 * [Container](#container)
+* [Controller](#controller)
 * [Router](#router)
 
 ### Container
@@ -58,6 +59,29 @@ Executing the commmand:
 php bin/console debug:container
 ```
 
+### Controller
+
+Generate new controller for an application 
+
+```php
+<?php
+
+use Candrianarijaona\Command\Controller\GenerateControllerCommand;
+
+$baseDir  = __DIR__ . '/../app/Example';
+
+$application->add(
+    new GenerateControllerCommand($baseDir)
+);
+```
+
+Executing the commmand:
+
+```bash
+php bin/console generate:controller
+```
+
+
 ### Router
 
 Display routes for an application.
@@ -75,4 +99,5 @@ Executing the commmand:
 ```bash
 php bin/console debug:router
 ```
+
 
