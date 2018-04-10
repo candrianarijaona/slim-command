@@ -61,7 +61,7 @@ php bin/console debug:container
 
 ### Controller
 
-Generate new controller for an application 
+Generate a new controller for an application 
 
 ```php
 <?php
