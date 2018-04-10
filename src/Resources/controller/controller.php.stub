@@ -1,6 +1,6 @@
 <?php
 
-namespace %namespace%;
+namespace %s;
 
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
@@ -9,9 +9,10 @@ use Slim\Http\Response;
 
 
 /**
- * Class
+ * Class %s
+ * @package %s
  */
-class %controller%
+class %s
 {
     /**
      * @param ServerRequestInterface|Request $request   The PSR-7 request object
@@ -20,9 +21,9 @@ class %controller%
      *
      * @return ResponseInterface
      */
-    public function %action%(ServerRequestInterface $request, ResponseInterface $response, array $args = [])
+    public function %s(ServerRequestInterface $request, ResponseInterface $response, array $args = [])
     {
-        //TODO : implement this controller
+        //TODO : implement this action
         return $response;
     }
 }
